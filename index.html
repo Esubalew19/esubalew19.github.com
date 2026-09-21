@@ -1,1347 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Esubalew Wale | Computer Science Graduate</title>
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background: #ffffff;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: white;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.navbar {
-    max-width: 1150px;
-    margin: auto;
-    padding: 18px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 27px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #0077ff;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: #222;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: #0077ff;
-}
-
-.menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    font-size: 28px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    max-width: 1150px;
-    min-height: 650px;
-    margin: auto;
-    padding: 80px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-
-.hero-text {
-    max-width: 650px;
-}
-
-.hello {
-    color: #0077ff;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.hero h1 {
-    font-size: 65px;
-    margin: 10px 0;
-}
-
-.hero h2 {
-    font-size: 28px;
-    font-weight: normal;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.hero-description {
-    color: #666;
-    font-size: 17px;
-}
-
-.hero-buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 13px 25px;
-    background: #0077ff;
-    color: white;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.btn:hover {
-    opacity: 0.85;
-}
-
-.btn-outline {
-    background: white;
-    color: #0077ff;
-    border: 2px solid #0077ff;
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-.hero-card {
-    width: 300px;
-    padding: 40px 25px;
-    text-align: center;
-
-    border-radius: 20px;
-    background: #f5f8ff;
-}
-
-.profile-circle {
-    width: 160px;
-    height: 160px;
-
-    margin: auto auto 20px;
-
-    border-radius: 50%;
-    background: #0077ff;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 45px;
-    font-weight: bold;
-}
-
-.hero-card h3 {
-    font-size: 23px;
-}
-
-.hero-card p {
-    color: #666;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    max-width: 1150px;
-    margin: auto;
-    padding: 90px 25px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title p {
-    color: #0077ff;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.section-title h2 {
-    font-size: 40px;
-    margin-top: 5px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-}
-
-.about-content h3 {
-    font-size: 27px;
-    margin-bottom: 15px;
-}
-
-.about-content p {
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.about-info {
-    display: grid;
-    gap: 15px;
-}
-
-.about-info div {
-    padding: 18px;
-    background: #f7f7f7;
-    border-radius: 8px;
-}
-
-.about-info strong {
-    display: block;
-}
-
-.about-info span {
-    color: #666;
-}
-
-
-/* =========================
-   SKILLS
-========================= */
-
-.skills-section {
-    max-width: none;
-    background: #f7f9fc;
-}
-
-.skills-grid {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.skill-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #eeeeee;
-}
-
-.skill-card h3 {
-    margin-bottom: 15px;
-}
-
-.skill-card p {
-    color: #666;
-    margin: 5px 0;
-}
-
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.project-card {
-    padding: 30px;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.project-number {
-    color: #0077ff;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.project-card h3 {
-    margin: 15px 0;
-    font-size: 22px;
-}
-
-.project-card p {
-    color: #666;
-}
-
-.project-tags {
-    margin-top: 20px;
-}
-
-.project-tags span {
-    display: inline-block;
-
-    background: #eef5ff;
-    color: #0077ff;
-
-    padding: 5px 10px;
-    margin: 3px;
-
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.experience-section {
-    max-width: none;
-    background: #f7f9fc;
-}
-
-.timeline {
-    max-width: 800px;
-    margin: auto;
-}
-
-.timeline-item {
-    position: relative;
-
-    padding-left: 35px;
-    padding-bottom: 45px;
-
-    border-left: 2px solid #0077ff;
-}
-
-.timeline-dot {
-    width: 14px;
-    height: 14px;
-
-    background: #0077ff;
-    border-radius: 50%;
-
-    position: absolute;
-    left: -8px;
-    top: 0;
-}
-
-.timeline-content span {
-    color: #0077ff;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.timeline-content h3 {
-    margin-top: 5px;
-    font-size: 24px;
-}
-
-.timeline-content h4 {
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.timeline-content p {
-    color: #666;
-}
-
-
-/* =========================
-   EDUCATION
-========================= */
-
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.education-card {
-    padding: 30px;
-    background: #f7f7f7;
-    border-radius: 10px;
-}
-
-.education-card h3 {
-    margin-bottom: 8px;
-}
-
-.education-card h4 {
-    color: #0077ff;
-}
-
-.education-card p {
-    color: #666;
-    margin-top: 8px;
-}
-
-
-/* =========================
-   LANGUAGES
-========================= */
-
-.language-section {
-    max-width: none;
-    background: #f7f9fc;
-}
-
-.languages {
-    max-width: 900px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.language {
-    text-align: center;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-}
-
-.language p {
-    color: #0077ff;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-content {
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
-}
-
-.contact-content > p {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.contact-list p {
-    margin: 10px;
-}
-
-.social-links {
-    margin-top: 25px;
-}
-
-.social-links a {
-    display: inline-block;
-
-    margin: 5px;
-    padding: 10px 20px;
-
-    color: #0077ff;
-
-    border: 1px solid #0077ff;
-    border-radius: 5px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 25px;
-
-    text-align: center;
-
-    background: #111;
-    color: white;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .nav-links {
-        display: none;
-
-        position: absolute;
-
-        top: 65px;
-        left: 0;
-
-        width: 100%;
-
-        background: white;
-
-        flex-direction: column;
-
-        text-align: center;
-
-        padding: 20px;
-
-        gap: 15px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hero {
-        flex-direction: column;
-
-        text-align: center;
-
-        padding-top: 60px;
-    }
-
-    .hero h1 {
-        font-size: 45px;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .about-content,
-    .skills-grid,
-    .projects-grid,
-    .education-grid,
-    .languages {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-card {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi & Sami TikTok Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Container mimicking a mobile phone screen */
+        .phone-mockup {
+            width: 360px;
+            height: 640px;
+            background-color: #000000;
+            border: 8px solid #333333;
+            border-radius: 36px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+
+        /* Fullscreen video layout inside the phone */
+        .tiktok-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay text mimicking TikTok captions */
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            pointer-events: none;
+        }
+
+        .username {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .caption {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #e5e5e5;
+        }
+
+        .hashtags {
+            color: #2af5ff;
+            font-weight: bold;
+        }
+
+        /* Simple button controls at the bottom of the page */
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #fe2c55; /* TikTok Red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e02447;
+        }
+    </style>
 </head>
-
-
 <body>
 
+    <h2>TikTok Clip Preview</h2>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <div class="phone-mockup">
+        <!-- Video element playing the clip -->
+        <video id="videoPlayer" class="tiktok-video" autoplay loop muted playsinline>
+            <source id="videoSource" src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-clock-over-his-face-41712-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-<header>
-
-<nav class="navbar">
-
-    <div class="logo">
-        Esube<span>.</span>
+        <!-- UI overlay details -->
+        <div class="video-overlay">
+            <div class="username">@WaleAnimations</div>
+            <div class="caption" id="videoCaption">Sami is ALWAYS late... 🙄 Waiting at the cafe simulation.</div>
+            <div class="hashtags">#3DAnimation #PixarStyle #AbiAndSami</div>
+        </div>
     </div>
 
-    <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#skills">Skills</a></li>
-
-        <li><a href="#projects">Projects</a></li>
-
-        <li><a href="#experience">Experience</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-    </ul>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-</nav>
-
-</header>
-
-
-<!-- =========================
-     HOME
-========================= -->
-
-<section id="home" class="hero">
-
-<div class="hero-text">
-
-    <p class="hello">
-        HELLO, I'M
-    </p>
-
-    <h1>
-        Esubalew Wale
-    </h1>
-
-    <h2>
-        Computer Science Graduate
-    </h2>
-
-    <p class="hero-description">
-
-        A motivated Computer Science graduate with a strong
-        interest in software development, databases, networking
-        and information technology.
-
-    </p>
-
-    <div class="hero-buttons">
-
-        <a href="#projects" class="btn">
-            View My Work
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-            Contact Me
-        </a>
-
+    <!-- Controls to step through your script scenes -->
+    <div class="controls">
+        <button class="btn" onclick="playClip(1)">Clip 1: Abi Waits</button>
+        <button class="btn" onclick="playClip(2)">Clip 2: Sami Arrives</button>
+        <button class="btn" onclick="playClip(3)">Clip 3: Outro</button>
     </div>
 
-</div>
-
-
-<div class="hero-card">
-
-    <div class="profile-circle">
-        EW
-    </div>
-
-    <h3>
-        Esubalew Wale
-    </h3>
-
-    <p>
-        Computer Science Graduate
-    </p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about" class="section">
-
-<div class="section-title">
-
-    <p>
-        GET TO KNOW ME
-    </p>
-
-    <h2>
-        About Me
-    </h2>
-
-</div>
-
-
-<div class="about-content">
-
-<div>
-
-    <h3>
-        Who I Am
-    </h3>
-
-    <p>
-
-        I am a Computer Science graduate with a Bachelor's
-        degree from Mattu University. I am interested in
-        technology, software development, databases,
-        networking and solving real-world problems through
-        technology.
-
-    </p>
-
-    <p>
-
-        I enjoy learning new technologies and improving my
-        technical and professional skills. I am adaptable,
-        hardworking and comfortable working both independently
-        and as part of a team.
-
-    </p>
-
-</div>
-
-
-<div class="about-info">
-
-    <div>
-        <strong>Education</strong>
-        <span>BSc in Computer Science</span>
-    </div>
-
-    <div>
-        <strong>University</strong>
-        <span>Mattu University</span>
-    </div>
-
-    <div>
-        <strong>GPA</strong>
-        <span>3.25</span>
-    </div>
-
-    <div>
-        <strong>Exit Exam</strong>
-        <span>83%</span>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section id="skills" class="section skills-section">
-
-<div class="section-title">
-
-    <p>
-        WHAT I KNOW
-    </p>
-
-    <h2>
-        My Skills
-    </h2>
-
-</div>
-
-
-<div class="skills-grid">
-
-
-<div class="skill-card">
-
-    <h3>
-        Programming
-    </h3>
-
-    <p>Python</p>
-    <p>Java</p>
-    <p>C++</p>
-
-</div>
-
-
-<div class="skill-card">
-
-    <h3>
-        Web Development
-    </h3>
-
-    <p>HTML</p>
-    <p>CSS</p>
-    <p>JavaScript</p>
-
-</div>
-
-
-<div class="skill-card">
-
-    <h3>
-        Database
-    </h3>
-
-    <p>MySQL</p>
-    <p>SQLite</p>
-    <p>SQL</p>
-
-</div>
-
-
-<div class="skill-card">
-
-    <h3>
-        IT Skills
-    </h3>
-
-    <p>Networking Basics</p>
-    <p>Microsoft Office</p>
-    <p>Computer Troubleshooting</p>
-
-</div>
-
-
-<div class="skill-card">
-
-    <h3>
-        Professional Skills
-    </h3>
-
-    <p>Problem Solving</p>
-    <p>Teamwork</p>
-    <p>Communication</p>
-
-</div>
-
-
-<div class="skill-card">
-
-    <h3>
-        Other
-    </h3>
-
-    <p>Adaptability</p>
-    <p>Technical Support</p>
-    <p>IT Consultation</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projects" class="section">
-
-<div class="section-title">
-
-    <p>
-        MY WORK
-    </p>
-
-    <h2>
-        Projects
-    </h2>
-
-</div>
-
-
-<div class="projects-grid">
-
-
-<div class="project-card">
-
-    <div class="project-number">
-        01
-    </div>
-
-    <h3>
-        Web Based Internship Management System
-    </h3>
-
-    <p>
-
-        A web-based system designed to help manage internship
-        activities, students, organizations and internship
-        information in an organized digital environment.
-
-    </p>
-
-    <div class="project-tags">
-
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Database</span>
-
-    </div>
-
-</div>
-
-
-<div class="project-card">
-
-    <div class="project-number">
-        02
-    </div>
-
-    <h3>
-        Web Based Water Billing Management
-    </h3>
-
-    <p>
-
-        A web-based project designed to manage water billing
-        information and make billing activities more organized
-        and efficient.
-
-    </p>
-
-    <div class="project-tags">
-
-        <span>Web</span>
-        <span>Database</span>
-        <span>SQL</span>
-
-    </div>
-
-</div>
-
-
-<div class="project-card">
-
-    <div class="project-number">
-        03
-    </div>
-
-    <h3>
-        Personal Website
-    </h3>
-
-    <p>
-
-        A personal website created to present my background,
-        skills, projects and professional information online.
-
-    </p>
-
-    <div class="project-tags">
-
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     EXPERIENCE
-========================= -->
-
-<section id="experience" class="section experience-section">
-
-<div class="section-title">
-
-    <p>
-        MY JOURNEY
-    </p>
-
-    <h2>
-        Experience
-    </h2>
-
-</div>
-
-
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-    <div class="timeline-dot"></div>
-
-    <div class="timeline-content">
-
-        <span>
-            July 2024 – August 2024
-        </span>
-
-        <h3>
-            Intern
-        </h3>
-
-        <h4>
-            Ministry of Innovation and Technology (MINT)
-        </h4>
-
-        <p>
-
-            Gained practical experience in an IT and technology
-            working environment and developed professional and
-            technical skills.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-<div class="timeline-item">
-
-    <div class="timeline-dot"></div>
-
-    <div class="timeline-content">
-
-        <span>
-            Current
-        </span>
-
-        <h3>
-            CCTV Operator
-        </h3>
-
-        <h4>
-            Coca-Cola Company
-        </h4>
-
-        <p>
-
-            Working in a professional environment while
-            developing responsibility, communication,
-            observation and technical skills.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     EDUCATION
-========================= -->
-
-<section class="section">
-
-<div class="section-title">
-
-    <p>
-        MY EDUCATION
-    </p>
-
-    <h2>
-        Education & Training
-    </h2>
-
-</div>
-
-
-<div class="education-grid">
-
-
-<div class="education-card">
-
-    <h3>
-        BSc in Computer Science
-    </h3>
-
-    <h4>
-        Mattu University
-    </h4>
-
-    <p>
-        2014 – 2017 EC
-    </p>
-
-    <p>
-        GPA: <strong>3.25</strong>
-    </p>
-
-    <p>
-        Exit Exam: <strong>83%</strong>
-    </p>
-
-</div>
-
-
-<div class="education-card">
-
-    <h3>
-        5 Million Ethiocoders Program
-    </h3>
-
-    <p>
-
-        Training in fundamental programming, data analytics,
-        Android development and Artificial Intelligence.
-
-    </p>
-
-</div>
-
-
-<div class="education-card">
-
-    <h3>
-        Professional Certificates
-    </h3>
-
-    <p>
-        E-SHE Certificate
-    </p>
-
-    <p>
-        Ethio Programming Certificate
-    </p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     LANGUAGES
-========================= -->
-
-<section class="section language-section">
-
-<div class="section-title">
-
-    <p>
-        COMMUNICATION
-    </p>
-
-    <h2>
-        Languages
-    </h2>
-
-</div>
-
-
-<div class="languages">
-
-
-<div class="language">
-
-    <h3>
-        Amharic
-    </h3>
-
-    <p>
-        Native
-    </p>
-
-</div>
-
-
-<div class="language">
-
-    <h3>
-        Oromic
-    </h3>
-
-    <p>
-        Fluent
-    </p>
-
-</div>
-
-
-<div class="language">
-
-    <h3>
-        English
-    </h3>
-
-    <p>
-        Fluent
-    </p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact" class="section contact-section">
-
-<div class="section-title">
-
-    <p>
-        GET IN TOUCH
-    </p>
-
-    <h2>
-        Contact Me
-    </h2>
-
-</div>
-
-
-<div class="contact-content">
-
-    <p>
-
-        I am open to opportunities where I can apply my skills,
-        learn new technologies and contribute to a professional
-        team.
-
-    </p>
-
-
-    <div class="contact-list">
-
-        <p>
-            📞 <strong>Phone:</strong>
-            +251 948 594 159
-        </p>
-
-        <p>
-            📧 <strong>Email:</strong>
-            esubalewwale1994@gmail.com
-        </p>
-
-    </div>
-
-
-    <div class="social-links">
-
-        <!-- PUT YOUR REAL LINKS HERE -->
-
-        <a href="YOUR_LINKEDIN_LINK" target="_blank">
-            LinkedIn
-        </a>
-
-        <a href="YOUR_GITHUB_LINK" target="_blank">
-            GitHub
-        </a>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        © <span id="year"></span>
-        Esubalew Wale. All Rights Reserved.
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-function toggleMenu() {
-
-    document
-        .querySelector(".nav-links")
-        .classList
-        .toggle("active");
-
-}
-
-
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            document
-                .querySelector(".nav-links")
-                .classList
-                .remove("active");
-
-        });
-
-    });
-
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-</script>
-
+    <script>
+        // Simple script to switch clips and captions dynamically
+        function playClip(clipNumber) {
+            const player = document.getElementById('videoPlayer');
+            const source = document.getElementById('videoSource');
+            const caption = document.getElementById('videoCaption');
+
+            if (clipNumber === 1) {
+                source.src = "https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-clock-over-his-face-41712-large.mp4";
+                caption.innerText = "Sami is ALWAYS late... 🙄 Waiting at the cafe simulation.";
+            } else if (clipNumber === 2) {
+                source.src = "https://assets.mixkit.co/videos/preview/mixkit-man-running-in-the-city-40058-large.mp4";
+                caption.innerText = "He finally running in with a crazy excuse! 🏃‍♂️💨";
+            } else if (clipNumber === 3) {
+                source.src = "https://assets.mixkit.co/videos/preview/mixkit-friends-laughing-together-41648-large.mp4";
+                caption.innerText = "Drop a follow if you have a friend like Sami! 👇";
+            }
+
+            // Reload and play the new video asset smoothly
+            player.load();
+            player.play();
+        }
+    </script>
 
 </body>
 </html>
